@@ -1,9 +1,9 @@
 package model;
+import model.Stock;
 
 public class Purchase {
 
 	private Cart cart;
-	private int paymentMethod;
 
 
 	public Purchase (Cart cart) {
@@ -22,10 +22,6 @@ public class Purchase {
 
 
 	public void choosePaymentMethod () {
-		switch (paymentMethod) {
-		case 1 : 
-
-		}
 
 
 	}
@@ -34,12 +30,13 @@ public class Purchase {
 		return cart.getCart_TotalValue(cart);
 	}
 
-	public void completePurchaseCredit (Cart cart) {
-
+	
+	public void completePurchaseCredit (Cart cart, Stock stock) {
+		
 
 	}
 
-	public void completePurchasePaymentSlip (Cart cart) {
+	public void completePurchasePaymentSlip (Cart cart, Stock stock) {
 
 
 

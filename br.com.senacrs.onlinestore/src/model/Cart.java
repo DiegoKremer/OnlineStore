@@ -33,7 +33,11 @@ public class Cart {
 		itemCart.remove(item);
 	}
 
-
+	
+	public Item getCartItems () {
+		return null;
+		
+	}
 
 
 	public double getCart_TotalValue(Cart cart) {
@@ -49,6 +53,9 @@ public class Cart {
 	}
 	
 	
+	public String toString () {
+		return "Cliente: "+client.getClient_name()+"\n"+"Items:"+"\n"+itemCart.toString();
+	}
 
 }
 

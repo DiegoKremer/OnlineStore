@@ -18,6 +18,8 @@ public class Stock {
 		itemStock.removeElement(item);
 	}
 	
+	
+	
 	public void displayItems () {
 		 for (int index = itemStock.size() - 1; index >= 0; index--) {
 			System.out.println(itemStock.get(index));

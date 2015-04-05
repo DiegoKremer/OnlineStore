@@ -18,6 +18,13 @@ public class Stock {
 		itemStock.removeElement(item);
 	}
 	
+	public Item getItem (int index) {
+		Item item = itemStock.get(index);
+		itemStock.remove(index);
+		
+		return item;
+	}
+	
 	
 	
 	public void displayItems () {

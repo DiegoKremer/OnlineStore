@@ -3,8 +3,8 @@ package model;
 public class Book extends Item {
 	
 	private int isbn;	 // Variable used to store the ISBN of the book, which also functions as the book unique code.
-	private Author author; // Variable used to store the author of the book.
-	private Publisher publisher; // Variable used to store the publisher of the book.
+	private String author; // Variable used to store the author of the book.
+	private String publisher; // Variable used to store the publisher of the book.
 	private String language; // Variable used to store the language on which the book is written.
 	private String genre; // Variable used to store the genre in which the book belongs.
 	private int pages; // Variable to store the number of pages the book contains.
@@ -14,12 +14,13 @@ public class Book extends Item {
 	// Constructor
 	
 	
-	public Book (int b_code, String b_description, String b_name, double b_price, int b_isbn, Author b_author, Publisher b_publisher, String b_language, String b_genre, int b_pages) {
+	public Book (int b_code, String b_description, String b_name, double b_price, int b_isbn, String b_author, String b_publisher, String b_language, String b_genre, int b_pages) {
 		super(b_code, b_description, b_name, b_price);
 		this.isbn = b_isbn;
 		this.author = b_author;
 		this.publisher = b_publisher;
 		this.language = b_language;
+		this.genre = b_genre;
 		this.pages = b_pages;
 		
 	}
@@ -39,22 +40,22 @@ public class Book extends Item {
 	}
 
 
-	public Author getBook_author() {
+	public String getBook_author() {
 		return author;
 	}
 
 
-	public void setBook_author(Author book_author) {
+	public void setBook_author(String book_author) {
 		this.author = book_author;
 	}
 
 
-	public Publisher getBook_publisher() {
+	public String getBook_publisher() {
 		return publisher;
 	}
 
 
-	public void setBook_publisher(Publisher book_publisher) {
+	public void setBook_publisher(String book_publisher) {
 		this.publisher = book_publisher;
 	}
 

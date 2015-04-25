@@ -1,6 +1,6 @@
 package model;
 
-public class Item implements Comparable<Item> {
+public class Item {
 	
 	private int code;
 	private String description;
@@ -49,23 +49,6 @@ public class Item implements Comparable<Item> {
 		
 	}
 
-	
-	@Override
-	public int compareTo(Item item) {
-		if (description.compareTo(item.getDescription()) < 0) 
-		{
-			return -1;
-		}
-		else if (description.compareTo(item.getDescription()) > 0) 
-		{
-			return 1;
-		}
-		else 
-		{
-			return 0;
-		}
-		
-	}
 	
 	
 

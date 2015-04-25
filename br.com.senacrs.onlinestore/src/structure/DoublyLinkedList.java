@@ -146,9 +146,9 @@ public class DoublyLinkedList<T> {
 		}
 
 	}
-	
+
 	/* 
-	 * Rewrites toString method to display the whole content of the list as its
+	 * Rewrites toString method to display the whole content of the list using its
 	 * string representation.
 	 */
 	@Override
@@ -156,16 +156,41 @@ public class DoublyLinkedList<T> {
 	{
 		StringBuilder s = new StringBuilder ();
 		Node<T> current = first;
-		
+
 		/* Loop through the list appending the content while current position is not empty. */
-		
+
 		while (current != null) {
-            s.append(current.toString()+"\n");
-            current = current.next;
-        }   	
-        
-        return s.toString();
-		
+			s.append(current.toString()+"\n");
+			current = current.next;
+		}   	
+
+		/* Return the content of all list positions converted to String type */
+
+		return s.toString();
+
 	}
+
+
+	/*
+	 * Count and return the current size of the list.
+	 */
+
+	public int listSize () {
+		int size = 0;
+		Node<T> current = first;
+
+		/*
+		 * Loop while counting the number of positions of the list
+		 * and increments to a size variable.
+		 */
+		while (current!=null) 
+		{
+			current = current.next;
+			size++;
+		}
+		/* Returns the size of the list. */
+		return size;
+	}
+	
 
 }

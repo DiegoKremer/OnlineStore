@@ -12,13 +12,18 @@ public class DoublyLinkedList<T> {
 		 * previous Node to which it might be connected.
 		 */
 		private T data;
-		private Node next;
-		private Node previous;
+		private Node<T> next;
+		private Node<T> previous;
 
 		public Node (T data) {
 
 			this.data = data;
 
+		}
+
+		@Override
+		public String toString() {
+			return data.toString();
 		}
 
 	}
@@ -42,7 +47,7 @@ public class DoublyLinkedList<T> {
 
 	public void addFirst (T data) 
 	{
-		Node newNode = new Node (data);
+		Node<T> newNode = new Node<T> (data);
 
 		/* 
 		 * If the list is empty will leave the Node with no links 
@@ -80,7 +85,7 @@ public class DoublyLinkedList<T> {
 		 */
 		if (!isEmpty()) 
 		{
-			Node temporary = first;
+			Node<T> temporary = first;
 
 			/* 
 			 * If the first Node don't have a next Node linked to it 
@@ -105,7 +110,7 @@ public class DoublyLinkedList<T> {
 	}
 
 
-	
+
 	// Remove last Node of the list.
 
 	public void removeLast () 
@@ -140,6 +145,27 @@ public class DoublyLinkedList<T> {
 			}
 		}
 
+	}
+	
+	/* 
+	 * Rewrites toString method to display the whole content of the list as its
+	 * string representation.
+	 */
+	@Override
+	public String toString () 
+	{
+		StringBuilder s = new StringBuilder ();
+		Node<T> current = first;
+		
+		/* Loop through the list appending the content while current position is not empty. */
+		
+		while (current != null) {
+            s.append(current.toString()+"\n");
+            current = current.next;
+        }   	
+        
+        return s.toString();
+		
 	}
 
 }

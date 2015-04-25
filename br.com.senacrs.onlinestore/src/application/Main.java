@@ -1,4 +1,5 @@
 package application;
+import structure.DoublyLinkedList;
 import model.*;
 
 public class Main {
@@ -6,8 +7,8 @@ public class Main {
 	public static void main(String [] args) {
 		
 		
-		Stock itemStock = new Stock ();
 		
+		DoublyLinkedList itemStock = new DoublyLinkedList ();
 		
 		Client client1 = new Client (001, "Jose Silva", "jose.silva@gmail.com");
 			
@@ -18,27 +19,15 @@ public class Main {
 		Electronic electronic2 = new Electronic (004, "lalalala", "Televisão", 2799.00, "220", "Sony");
 		Book book1 = new Book (005, "lalalala", "Como programar Java", 180.0, 98231203, "Fulaninho", "Editora X", "Portugues", "Tecnicos", 855);
 		
-		itemStock.addItem(dvd1);
-		itemStock.addItem(dvd2);
-		itemStock.addItem(electronic1);
-		itemStock.addItem(electronic2);
-		itemStock.addItem(book1);
-		
-		itemStock.displayItems();
-		
-		// Cart
-		
-		Cart cartclient1 = new Cart (client1);
-		
-		cartclient1.addItems(itemStock.getItem(0));
-		cartclient1.addItems(itemStock.getItem(1));
+		itemStock.addFirst(dvd1);
+		itemStock.addFirst(dvd2);
+		itemStock.addFirst(electronic1);
+		itemStock.addFirst(electronic2);
+		itemStock.addFirst(book1);
 		
 		
-
-		
-		System.out.println(cartclient1);
-		
-		itemStock.displayItems();
+		System.out.println(itemStock.toString());
+	
 		
 
 		

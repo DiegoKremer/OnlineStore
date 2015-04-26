@@ -87,7 +87,7 @@ public class DoublyLinkedList {
 		 */
 		if (!isEmpty()) 
 		{
-			
+
 
 			/* 
 			 * If the first Node don't have a next Node linked to it 
@@ -121,7 +121,7 @@ public class DoublyLinkedList {
 		 * Creates a temporary Node to receive the value of the Node at
 		 * the last position of the list.
 		 */
-		
+
 
 		if (!isEmpty()) 
 		{	
@@ -194,18 +194,19 @@ public class DoublyLinkedList {
 		return size;
 	}
 
-	
+
 	/* Sort the list content by description length. */
-	
+
 	public void sort () 
 	{	
+		
 		/* Iterate through the list starting at first position until it is null. */
 		for (Node index = first; index!=null; index = index.next) 
 		{
 			/* Create Node to store the minimum value and to start set it with the
 			 * value from the first Node. */
 			Node min = index;
-			
+
 			/* Iterate through the list starting at the previous index point. */
 			for (Node following = index; following!=null; following = following.next) 
 			{
@@ -216,39 +217,47 @@ public class DoublyLinkedList {
 				{
 					min = following;
 				}
-				
+
 			}
 			/* Copy the content of the index Node to a temporary Node. */
 			Node temp = new Node(index.data);
-			
+
 			/* Copy the content of the Node with the minimum value to the Node at Index. */
 			index.data = min.data;
-			
+
 			/* Copy the content of the temporary Node to the minimum Node. */
 			min.data = temp.data;
 		}
 	}
-	
-	
-	
+
+
+
 	/* Searches the list by description attribute using a string parameter */
-	
+
 	public void search (String value) 
 	{
-		/* Iterate through the list starting at first position until it is null. */
-		for (Node index = first; index!=null; index = index.next) 
+		/* Checks first if the list is empty, if positive will inform. */
+		if (isEmpty()) 
 		{
-			/* Test if the description of the current Item contains the String 
-			 * value received from method parameter. */
-			if (index.data.getDescription().contains(value)) 
+			System.out.println("The list is empty.");
+		} 
+		else 
+		{
+			/* Iterate through the list starting at first position until it is null. */
+			for (Node index = first; index!=null; index = index.next) 
 			{
-				/* If the Item description contains the string value informed then
-				 * it will print on the console the Item information. */
-				System.out.println(index.toString());
-			}
+				/* Test if the description of the current Item contains the String 
+				 * value received from method parameter. */
+				if (index.data.getDescription().contains(value)) 
+				{
+					/* If the Item description contains the string value informed then
+					 * it will print on the console the Item information. */
+					System.out.println(index.toString());
+				}
 
+			}
 		}
-		
+
 	}
 
 }

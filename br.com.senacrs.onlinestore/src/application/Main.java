@@ -21,6 +21,7 @@ public class Main {
 		
 		/* Manipulating the stock with the list*/
 		
+		
 		itemStock.addFirst(dvd1);
 		itemStock.addFirst(dvd2);
 		itemStock.addFirst(electronic1);

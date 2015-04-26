@@ -48,7 +48,6 @@ public class Item {
 		return "Codigo: "+code+" - "+"Item: "+name +" - "+"Descricao: "+description+" - "+"Preco: "+price;
 		
 	}
-
 	
 	
 

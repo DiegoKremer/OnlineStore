@@ -1,21 +1,23 @@
 package structure;
+import model.Item;
 
-public class DoublyLinkedList<T> {
+
+public class DoublyLinkedList {
 
 
 	// Class to create the Node object. 
-	private static class Node<T> {
+	private static class Node {
 
 		/*
 		 * The Node has three variables, which will be one to store wanted the data, 
 		 * one to be the link to its next Node and another to be link to the 
 		 * previous Node to which it might be connected.
 		 */
-		private T data;
-		private Node<T> next;
-		private Node<T> previous;
+		private Item data;
+		private Node next;
+		private Node previous;
 
-		public Node (T data) {
+		public Node (Item data) {
 
 			this.data = data;
 
@@ -31,8 +33,8 @@ public class DoublyLinkedList<T> {
 
 	// Create first and last Nodes with null values. 
 
-	private Node<T> first = null;
-	private Node<T> last = null;
+	private Node first = null;
+	private Node last = null;
 
 
 	// See if the list is empty by checking if the first position is null.  
@@ -45,9 +47,9 @@ public class DoublyLinkedList<T> {
 
 	// Add a new Node to the first position of the list.
 
-	public void addFirst (T data) 
+	public void addFirst (Item data) 
 	{
-		Node<T> newNode = new Node<T> (data);
+		Node newNode = new Node (data);
 
 		/* 
 		 * If the list is empty will leave the Node with no links 
@@ -85,7 +87,7 @@ public class DoublyLinkedList<T> {
 		 */
 		if (!isEmpty()) 
 		{
-			Node<T> temporary = first;
+			
 
 			/* 
 			 * If the first Node don't have a next Node linked to it 
@@ -119,7 +121,7 @@ public class DoublyLinkedList<T> {
 		 * Creates a temporary Node to receive the value of the Node at
 		 * the last position of the list.
 		 */
-		Node temporary = last;
+		
 
 		if (!isEmpty()) 
 		{	
@@ -155,7 +157,7 @@ public class DoublyLinkedList<T> {
 	public String toString () 
 	{
 		StringBuilder s = new StringBuilder ();
-		Node<T> current = first;
+		Node current = first;
 
 		/* Loop through the list appending the content while current position is not empty. */
 
@@ -177,7 +179,7 @@ public class DoublyLinkedList<T> {
 
 	public int listSize () {
 		int size = 0;
-		Node<T> current = first;
+		Node current = first;
 
 		/*
 		 * Loop while counting the number of positions of the list
@@ -191,6 +193,40 @@ public class DoublyLinkedList<T> {
 		/* Returns the size of the list. */
 		return size;
 	}
+
 	
+	/* Sort the list content by description length. */
+	
+	public void sort () 
+	{	
+		/* Iterate through the list starting at first position until it is null. */
+		for (Node index = first; index!=null; index = index.next) 
+		{
+			/* Create Node to store the minimum value and to start set it with the
+			 * value from the first Node. */
+			Node min = index;
+			
+			/* Iterate through the list starting at the previous index point. */
+			for (Node following = index; following!=null; following = following.next) 
+			{
+				/* Compare the size of description attribute between the Node of current 
+				 * minimum value with the value of current Node and if minimum value is 
+				 * greater than current value it will swap the minimum value. */
+				if (min.data.getDescription().length() > following.data.getDescription().length()) 
+				{
+					min = following;
+				}
+				
+			}
+			/* Copy the content of the index Node to a temporary Node. */
+			Node temp = new Node(index.data);
+			
+			/* Copy the content of the Node with the minimum value to the Node at Index. */
+			index.data = min.data;
+			
+			/* Copy the content of the temporary Node to the minimum Node. */
+			min.data = temp.data;
+		}
+	}
 
 }

@@ -228,5 +228,27 @@ public class DoublyLinkedList {
 			min.data = temp.data;
 		}
 	}
+	
+	
+	
+	/* Searches the list by description attribute using a string parameter */
+	
+	public void search (String value) 
+	{
+		/* Iterate through the list starting at first position until it is null. */
+		for (Node index = first; index!=null; index = index.next) 
+		{
+			/* Test if the description of the current Item contains the String 
+			 * value received from method parameter. */
+			if (index.data.getDescription().contains(value)) 
+			{
+				/* If the Item description contains the string value informed then
+				 * it will print on the console the Item information. */
+				System.out.println(index.toString());
+			}
+
+		}
+		
+	}
 
 }

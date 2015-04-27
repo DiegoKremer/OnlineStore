@@ -13,11 +13,11 @@ public class Main {
 		
 		// Client client1 = new Client (001, "Jose Silva", "jose.silva@gmail.com");
 			
-		DVD dvd1 = new DVD (001, "lal", "Harry Potter", 29.90, 4, 140);
-		DVD dvd2 = new DVD (002, "lalala", "Velozes e Furiosos", 24.90, 4, 112);
-		Electronic electronic1 = new Electronic (003, "lalalala", "Camera Fotografica", 915.00, "bivolt", "Nikon");
-		Electronic electronic2 = new Electronic (004, "lelelelalal", "Televisão", 2799.00, "220", "Sony");
-		Book book1 = new Book (005, "lalalalalalalal", "Como programar Java", 180.0, 98231203, "Fulaninho", "Editora X", "Portugues", "Tecnicos", 855);
+		DVD dvd1 = new DVD (001, "abl", "Harry Potter", 29.90, 4, 140);
+		DVD dvd2 = new DVD (002, "aalala", "Velozes e Furiosos", 24.90, 4, 112);
+		Electronic electronic1 = new Electronic (003, "calalala", "Camera Fotografica", 915.00, "bivolt", "Nikon");
+		Electronic electronic2 = new Electronic (004, "aaalelelalal", "Televisão", 2799.00, "220", "Sony");
+		Book book1 = new Book (005, "balalalalalalal", "Como programar Java", 180.0, 98231203, "Fulaninho", "Editora X", "Portugues", "Tecnicos", 855);
 		
 		/* Manipulating the stock with the list*/
 		

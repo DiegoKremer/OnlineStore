@@ -195,7 +195,7 @@ public class DoublyLinkedList {
 	}
 
 
-	/* Sort the list content by description length. */
+	/* Sort the list content by description words in alphabetical order. */
 
 	public void sort () 
 	{	
@@ -210,10 +210,10 @@ public class DoublyLinkedList {
 			/* Iterate through the list starting at the previous index point. */
 			for (Node following = index; following!=null; following = following.next) 
 			{
-				/* Compare the size of description attribute between the Node of current 
+				/* Compare the chars at the words of description attribute between the Node of current 
 				 * minimum value with the value of current Node and if minimum value is 
 				 * greater than current value it will swap the minimum value. */
-				if (min.data.getDescription().length() > following.data.getDescription().length()) 
+				if (min.data.getDescription().charAt(0) > following.data.getDescription().charAt(0)) 
 				{
 					min = following;
 				}
@@ -259,5 +259,10 @@ public class DoublyLinkedList {
 		}
 
 	}
+	
+	public void searchBinary (String value) 
+	{
+	
+    }
 
 }

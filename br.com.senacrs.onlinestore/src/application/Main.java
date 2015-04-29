@@ -1,11 +1,14 @@
 package application;
 
+import java.io.FileNotFoundException;
+
 import structure.DoublyLinkedList;
+import structure.FileReader;
 import model.*;
 
 public class Main {
 	
-	public static void main(String [] args) {
+	public static void main(String [] args) throws FileNotFoundException {
 		
 		/* Creation of the objects needed for testing */
 		
@@ -42,8 +45,9 @@ public class Main {
 		itemStock.search("lalalala");
 		
 		
-	
+		FileReader reader = new FileReader ();
 		
+		reader.readCSV();
 		
 		
 		

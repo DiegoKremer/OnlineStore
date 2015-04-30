@@ -1,5 +1,4 @@
 package model;
-import model.Stock;
 
 public class Purchase {
 
@@ -31,12 +30,12 @@ public class Purchase {
 	}
 
 	
-	public void completePurchaseCredit (Cart cart, Stock stock) {
+	public void completePurchaseCredit (Cart cart) {
 		
 
 	}
 
-	public void completePurchasePaymentSlip (Cart cart, Stock stock) {
+	public void completePurchasePaymentSlip (Cart cart) {
 
 
 

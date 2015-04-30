@@ -14,14 +14,15 @@ public class Book extends Item {
 	// Constructor
 	
 	
-	public Book (int b_code, String b_description, String b_name, double b_price, int b_isbn, String b_author, String b_publisher, String b_language, String b_genre, int b_pages) {
-		super(b_code, b_description, b_name, b_price);
-		this.isbn = b_isbn;
-		this.author = b_author;
-		this.publisher = b_publisher;
-		this.language = b_language;
-		this.genre = b_genre;
-		this.pages = b_pages;
+	public Book (int code, String description, String name, double price, int isbn, String author, String publisher, String language, String genre, int pages) 
+	{
+		super(code, description, name, price);
+		this.isbn = isbn;
+		this.author = author;
+		this.publisher = publisher;
+		this.language = language;
+		this.genre = genre;
+		this.pages = pages;
 		
 	}
 

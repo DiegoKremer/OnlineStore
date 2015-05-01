@@ -10,7 +10,7 @@ public class FileReader {
 	{
 		
 		/* Creates scanner that will read the CSV file. */
-		Scanner reader = new Scanner (new File("C:\\Users\\631320019\\OnlineStore\\br.com.senacrs.onlinestore\\src\\files\\arquivocsv.csv"));
+		Scanner reader = new Scanner (new File("arquivocsv.csv"));
 		
 		/* 
 		 * Set the delimiter which will be used to separate 

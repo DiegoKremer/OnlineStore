@@ -31,24 +31,25 @@ public class Cart {
 		itemCart.addFirst(item);
 	}
 
+	/*TODO:
 	public void removeItems (Item item) {
 		itemCart.removeFirst(item);
 	}
-
+	*/
 	
 	public Item getCartItems () {
 		return null;
 		
 	}
 
-
+	/*TODO:
 	public double getCart_TotalValue(Cart cart) {
 		for (int index = itemCart.listSize() - 1; index >= 0; index--) {
 			price = price + itemCart.get(index).getPrice();
 		}
 		return price;
 	}
-
+	*/
 
 	public void setCart_price(double cart_price) {
 		this.price = cart_price;

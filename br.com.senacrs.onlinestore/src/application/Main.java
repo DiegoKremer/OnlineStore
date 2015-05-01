@@ -41,13 +41,24 @@ public class Main {
 		
 		System.out.println(itemStock.toString());
 
+		itemStock.searchItemDescription("lalalala");
 		
-		itemStock.search("lalalala");
+		itemStock.searchItem(dvd1).toString();
 		
+		itemStock.removeSpecific(dvd1);
+		
+		
+		
+		itemStock.toString();
+		
+		/* Reads the CSV File*/
 		
 		FileReader reader = new FileReader ();
 		
-		reader.readCSV();
+		//reader.readCSV();
+		
+		
+		
 		
 		
 		

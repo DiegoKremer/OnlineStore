@@ -16,8 +16,14 @@ public class DoublyLinkedList {
 		private Item data;
 		private Node next;
 		private Node previous;
-
-		public Node (Item data) {
+		
+		public Node () 
+		{
+			
+		}
+		
+		public Node (Item data) 
+		{
 
 			this.data = data;
 
@@ -75,16 +81,32 @@ public class DoublyLinkedList {
 			first = newNode;
 		}
 	}
+	
+	
+	/* This method receives an Item, searches for it in the list and 
+	 * if it is found within a Node, it will be removed. */
 
+	public void removeSpecific (Item item) 
+	{
+		Node nodeFound = new Node ();
+		Node tempOne = new Node ();
+		
+
+		if (!isEmpty()) 
+		{
+			nodeFound = searchItem (item);
+			tempOne = nodeFound;
+			nodeFound.next.previous = nodeFound.previous.next;
+			nodeFound.previous.next = tempOne;
+		}
+		
+	}
 
 	// Remove first Node of the list.
 
 	public void removeFirst () 
 	{
-		/* 
-		 * If list is not empty then creates a temporary Node to receive the Node  
-		 * at the first position.
-		 */
+		
 		if (!isEmpty()) 
 		{
 
@@ -230,7 +252,7 @@ public class DoublyLinkedList {
 
 	/* Searches the list by description attribute using a string parameter */
 
-	public void searchDescription (String value) 
+	public void searchItemDescription (String value) 
 	{
 		/* Checks first if the list is empty, if positive will inform. */
 		if (isEmpty()) 
@@ -258,37 +280,48 @@ public class DoublyLinkedList {
 	
 	/* Searches the list using an Item as parameter */
 	
-	public boolean searchItem (Item item) 
+	public Node searchItem (Item item)
 	{
-		{
-			/* Checks first if the list is empty, if positive will inform. */
-			if (isEmpty()) 
-			{
-				System.out.println("The list is empty.");
-			} 
-			else 
-			{
-				/* Iterate through the list starting at first position until it is null. */
-				for (Node index = first; index!=null; index = index.next) 
+		
+			try {
+				
+				/* Checks first if the list is empty, if positive will inform. */
+				if (isEmpty()) 
 				{
-					/* Test if the informed item is the same as the item stored on the Node */
-					if (index.data.equals(item)) 
+					System.out.println("The list is empty.");
+				} 
+				else 
+				{
+					/* Iterate through the list starting at first position until it is null. */
+					for (Node index = first; index!=null; index = index.next) 
 					{
-						/* If the Item informed matches the Item from a Node on the list it
-						 * returns true. */
-						
-					return true;
-						
-					}
+						/* Test if the informed item is the same as the item stored on the Node */
+						if (index.data.equals(item)) 
+						{
+							/* If the Item informed matches the Item from a Node on the list it
+							 * returns true. */
+							
+						return index;
+							
+						}
 
+					}
 				}
+				
+			} catch (Exception e){
+				System.err.println("Item not found.");
+			}
+			
+			return null;
+			
 			}
 
-		}
 		
-		/* If the Item is not found, then it will return false. */
-		
-		return false;
 	}
+		
+		
+		
+		
+	
 
-}
+

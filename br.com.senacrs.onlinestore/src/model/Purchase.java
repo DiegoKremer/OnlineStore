@@ -24,11 +24,12 @@ public class Purchase {
 
 
 	}
-
+	
+	/*TODO:
 	public double showTotalValue (Cart cart) {
 		return cart.getCart_TotalValue(cart);
 	}
-
+	*/
 	
 	public void completePurchaseCredit (Cart cart) {
 		

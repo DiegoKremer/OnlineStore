@@ -117,10 +117,6 @@ public class DoublyLinkedList {
 
 	public void removeLast () 
 	{
-		/* 
-		 * Creates a temporary Node to receive the value of the Node at
-		 * the last position of the list.
-		 */
 
 
 		if (!isEmpty()) 
@@ -234,7 +230,7 @@ public class DoublyLinkedList {
 
 	/* Searches the list by description attribute using a string parameter */
 
-	public void search (String value) 
+	public void searchDescription (String value) 
 	{
 		/* Checks first if the list is empty, if positive will inform. */
 		if (isEmpty()) 
@@ -260,9 +256,39 @@ public class DoublyLinkedList {
 
 	}
 	
-	public void searchBinary (String value) 
-	{
+	/* Searches the list using an Item as parameter */
 	
-    }
+	public boolean searchItem (Item item) 
+	{
+		{
+			/* Checks first if the list is empty, if positive will inform. */
+			if (isEmpty()) 
+			{
+				System.out.println("The list is empty.");
+			} 
+			else 
+			{
+				/* Iterate through the list starting at first position until it is null. */
+				for (Node index = first; index!=null; index = index.next) 
+				{
+					/* Test if the informed item is the same as the item stored on the Node */
+					if (index.data.equals(item)) 
+					{
+						/* If the Item informed matches the Item from a Node on the list it
+						 * returns true. */
+						
+					return true;
+						
+					}
+
+				}
+			}
+
+		}
+		
+		/* If the Item is not found, then it will return false. */
+		
+		return false;
+	}
 
 }

@@ -1,10 +1,12 @@
 package model;
 import java.util.Vector;
 
+import structure.DoublyLinkedList;
+
 public class Cart {
 
 	private Client client; // Variable to store the client owner of the cart.
-	private Vector<Item> itemCart = new Vector<Item>(); // Variable to store the Items in the cart.
+	private DoublyLinkedList itemCart = new DoublyLinkedList(); // Variable to store the Items in the cart.
 	private double price; // Variable to store the sum of the prices of the books.
 	
 
@@ -26,11 +28,11 @@ public class Cart {
 
 	
 	public void addItems (Item item) {
-		itemCart.add(item);
+		itemCart.addFirst(item);
 	}
 
 	public void removeItems (Item item) {
-		itemCart.remove(item);
+		itemCart.removeFirst(item);
 	}
 
 	
@@ -41,7 +43,7 @@ public class Cart {
 
 
 	public double getCart_TotalValue(Cart cart) {
-		for (int index = itemCart.size() - 1; index >= 0; index--) {
+		for (int index = itemCart.listSize() - 1; index >= 0; index--) {
 			price = price + itemCart.get(index).getPrice();
 		}
 		return price;

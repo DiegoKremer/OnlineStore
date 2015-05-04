@@ -43,7 +43,7 @@ public class Main {
 
 		itemStock.searchItemDescription("lalalala");
 		
-		itemStock.searchItem(dvd1).toString();
+
 		
 		itemStock.removeSpecific(dvd1);
 		
@@ -51,15 +51,15 @@ public class Main {
 		
 		itemStock.toString();
 		
+		
+		
 		/* Reads the CSV File*/
 		
 		FileReader reader = new FileReader ();
 		
-		//reader.readCSV();
+		reader.readCSV(itemStock);
 		
-		
-		
-		
+		itemStock.toString();
 		
 		
 		

@@ -13,6 +13,11 @@ public class Book extends Item {
 	
 	// Constructor
 	
+	public Book (int code, String description, String name, double price) 
+	{
+		super (code, description, name, price);
+		
+	}
 	
 	public Book (int code, String description, String name, double price, int isbn, String author, String publisher, String language, String genre, int pages) 
 	{

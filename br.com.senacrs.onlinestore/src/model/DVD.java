@@ -5,7 +5,13 @@ public class DVD extends Item{
 	private int region;
 	private int length;
 	
-	public DVD (int code, String description, String name, double price, int region, int length) {
+	public DVD (int code, String description, String name, double price) 
+	{
+		super(code, description, name, price);
+	}
+	
+	public DVD (int code, String description, String name, double price, int region, int length) 
+	{
 		super(code, description, name, price);
 		this.region = region;
 		this.length = length;

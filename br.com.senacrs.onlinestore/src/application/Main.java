@@ -49,17 +49,14 @@ public class Main {
 		
 		
 		
-	
-		
-		
 		
 		/* Reads the CSV File*/
 		
 		FileReader reader = new FileReader ();
 		
-		reader.readCSV(itemStock);
 		
-		System.out.println(itemStock.toString());
+		
+		
 		
 		
 		

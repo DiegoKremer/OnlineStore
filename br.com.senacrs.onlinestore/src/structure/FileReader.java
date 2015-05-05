@@ -20,8 +20,8 @@ public class FileReader {
 		 * Set the delimiter which will be used to separate 
 		 * the information from the file. 
 		 */
-		reader.useDelimiter(setDelimiter("; "));
-
+		
+		
 
 		/* 
 		 * The reader will go through the file until it have read
@@ -29,20 +29,25 @@ public class FileReader {
 		 */
 		while (reader.hasNext()) {
 			
+			/* */
+			
 			int code = 0;
 
 			//System.out.print(reader.next() + " ");
+			
 			//TODO: Code the method do add the information to a list
 
 			/* Split the fields of the current line being read to add 
 			 * them to their respective attributes equivalents */
 			
-			String line = reader.next();
-			String[] lineContent = line.split(";");
+			String[] lineContent = reader.next().split(";");
+			System.out.println(lineContent[0]);
 			
 
 			/* Check the item type and add the line content to a list 
 			 * according to the type read. */
+			
+			
 			
 			if (lineContent[0].startsWith("livro")) 
 			{
@@ -54,10 +59,12 @@ public class FileReader {
 			else if (lineContent[0].startsWith("dvd")) 
 			{
 				code++;
-				DVD dvd = new DVD (code, null, lineContent[1],0);
+				DVD dvd = new DVD (code, null, lineContent[1], 0);
 				list.addFirst(dvd);
 
 			}
+			
+			
 		}
 
 		reader.close();

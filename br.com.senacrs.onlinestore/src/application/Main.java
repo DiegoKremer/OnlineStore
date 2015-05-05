@@ -49,7 +49,7 @@ public class Main {
 		
 		
 		
-		itemStock.toString();
+	
 		
 		
 		
@@ -59,7 +59,7 @@ public class Main {
 		
 		reader.readCSV(itemStock);
 		
-		itemStock.toString();
+		System.out.println(itemStock.toString());
 		
 		
 		

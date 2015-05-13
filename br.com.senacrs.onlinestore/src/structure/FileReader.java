@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 
 import model.Book;
 import model.DVD;
-import model.Item;
 
 public class FileReader {
 
@@ -22,7 +21,7 @@ public class FileReader {
 		 * the information from the file. 
 		 */
 		
-		reader.useDelimiter(";");
+		reader.useDelimiter("/n");
 		
 		
 
@@ -45,12 +44,13 @@ public class FileReader {
 			String line = reader.next(); 
 			String[] lineContent = line.split(Pattern.quote(";"));
 			
-			//System.out.println(lineContent[1]);
+			
+			System.out.println(lineContent[7]);
 
 			/* Check the item type and add the line content to a list 
 			 * according to the type read. */
 			
-			System.out.println(reader.next());
+		
 			
 			if (lineContent[0].startsWith("livro")) 
 			{
@@ -84,6 +84,31 @@ public class FileReader {
 	{
 		return delimiter;
 	}
+	
+	/*
+	 * while(arq.hasNext()) {
+	 * 	String tipo = arq.next();
+	 *	String dados = arq.nextLine();
+	 *if(tipo.equals("livro") {
+	 *	lista.insere(criaLivro(dados));
+	 *else
+	 *lista.insere(criaDVD(dados);
+	 *
+	 *
+	 *Livro criaLivro(String dados) {
+	 *	Scanner sc = new Scanner(dados);
+	 *sc.setDelimiter(";");
+	 *String titulo = sc.next();
+	 *String isbn = sc.next();
+	 *Livro l = new Livro (titulo, isbn)
+	 *while(sc.hasNext())
+	 *	l.addAuthor(sc.next())
+	 *return l;
+	 *}
+	 *} 
+	 * }
+	 *  
+	 *  */
 
 
 

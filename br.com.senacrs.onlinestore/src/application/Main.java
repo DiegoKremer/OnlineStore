@@ -54,6 +54,8 @@ public class Main {
 		
 		FileReader reader = new FileReader ();
 		
+		reader.readCSV(itemStock);
+		
 		
 		
 		

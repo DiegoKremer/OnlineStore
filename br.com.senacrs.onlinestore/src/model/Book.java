@@ -1,25 +1,29 @@
 package model;
 
 public class Book extends Item {
-	
+
 	private int isbn;	 // Variable used to store the ISBN of the book, which also functions as the book unique code.
-	private String author; // Variable used to store the author of the book.
+	private String author[]; // Variable used to store the author of the book.
 	private String publisher; // Variable used to store the publisher of the book.
 	private String language; // Variable used to store the language on which the book is written.
 	private String genre; // Variable used to store the genre in which the book belongs.
 	private int pages; // Variable to store the number of pages the book contains.
 	private Cart[] cart; // Variable to check which carts books are in. 
-	
-	
+
+
 	// Constructor
-	
+
 	public Book (int code, String description, String name, double price) 
 	{
 		super (code, description, name, price);
-		
+
 	}
-	
-	public Book (int code, String description, String name, double price, int isbn, String author, String publisher, String language, String genre, int pages) 
+
+	public Book (int code, String description, String name, double price, String author) {
+		super(code, description, name, price);
+	}
+
+	public Book (int code, String description, String name, double price, int isbn, String[] author, String publisher, String language, String genre, int pages) 
 	{
 		super(code, description, name, price);
 		this.isbn = isbn;
@@ -28,12 +32,11 @@ public class Book extends Item {
 		this.language = language;
 		this.genre = genre;
 		this.pages = pages;
-		
+
 	}
 
-	
-	// Below are the setters and getters.
 
+	// Below are the setters and getters.
 
 
 	public int getBook_isbn() {
@@ -46,13 +49,20 @@ public class Book extends Item {
 	}
 
 
-	public String getBook_author() {
+	public String[] getBook_author() {
 		return author;
 	}
 
 
 	public void setBook_author(String book_author) {
-		this.author = book_author;
+		if (this.author[0].isEmpty()) {
+			this.author[0] = book_author;
+		} else {
+			int i = 1;
+			while (this.author[i] != null)
+				this.author[i] = book_author;
+			i++;
+		}
 	}
 
 
@@ -104,7 +114,7 @@ public class Book extends Item {
 	public void setBook_cart(Cart[] book_cart) {
 		this.cart = book_cart;
 	};
-	
-	
-	
+
+
+
 }

@@ -20,7 +20,7 @@ public class Main {
 		DVD dvd2 = new DVD (002, "aalala", "Velozes e Furiosos", 24.90, 4, 112);
 		Electronic electronic1 = new Electronic (003, "calalala", "Camera Fotografica", 915.00, "bivolt", "Nikon");
 		Electronic electronic2 = new Electronic (004, "aaalelelalal", "Televisão", 2799.00, "220", "Sony");
-		Book book1 = new Book (005, "balalalalalalal", "Como programar Java", 180.0, 98231203, "Fulaninho", "Editora X", "Portugues", "Tecnicos", 855);
+		Book book1 = new Book (005, "balalalalalalal", "Como programar Java", 180.0);
 		
 		/* Manipulating the stock with the list*/
 		

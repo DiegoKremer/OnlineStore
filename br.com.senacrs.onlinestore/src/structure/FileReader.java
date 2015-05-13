@@ -30,42 +30,24 @@ public class FileReader {
 		 * all the file. 
 		 */
 		while (reader.hasNext()) {
+			
+			/* Split the first field as the type of the current line being
+			 * read and the rest will be set as the data. */
 						
-			
-			//System.out.print(reader.next() + " ");
-			
-			//TODO: Code the method do add the information to a list
-			
-			int code = 0;
+			String type = reader.next();
+			String data = reader.nextLine();
 
-			/* Split the fields of the current line being read to add 
-			 * them to their respective attributes equivalents */
 			
-			String line = reader.next(); 
-			String[] lineContent = line.split(Pattern.quote(";"));
-			
-			
-			System.out.println(lineContent[7]);
 
 			/* Check the item type and add the line content to a list 
 			 * according to the type read. */
 			
-		
 			
-			if (lineContent[0].startsWith("livro")) 
-			{
-				code++;
-				Book book = new Book (code, null, lineContent[1], 0);
-				list.addFirst(book);
-
+			if (type.equals("livro")) {
+				list.addFirst(createBook(data));
 			} 
-			else if (lineContent[0].startsWith("dvd")) 
-			{
-				
-				code++;
-				DVD dvd = new DVD (code, null, lineContent[1], 0);
-				list.addFirst(dvd);
-
+			else {
+				list.addFirst(createDVD(data));
 			}
 			
 			
@@ -73,6 +55,18 @@ public class FileReader {
 
 		reader.close();
 
+	}
+	
+	private Book createBook(String data) {
+		Scanner sc = new Scanner (data);
+		sc.useDelimiter(";");
+		String title = sc.next();
+		String isbn = sc.next();
+		Book b = new Book (title, isbn);
+		while(sc.hasNext()) {
+			b.addAuthor(sc.next());
+		}
+		return b;
 	}
 
 	/* 

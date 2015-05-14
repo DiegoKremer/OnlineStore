@@ -1,9 +1,12 @@
 package model;
 
 public class Book extends Item {
-
+	
+	private int n = 50;
+	private int i = 0;
+	
 	private int isbn;	 // Variable used to store the ISBN of the book, which also functions as the book unique code.
-	private String author[]; // Variable used to store the author of the book.
+	private String[] author = new String[n]; // Variable used to store the author of the book.
 	private String publisher; // Variable used to store the publisher of the book.
 	private String language; // Variable used to store the language on which the book is written.
 	private String genre; // Variable used to store the genre in which the book belongs.
@@ -54,14 +57,10 @@ public class Book extends Item {
 	}
 
 
-	public void setBook_author(String book_author) {
-		if (this.author[0].isEmpty()) {
-			this.author[0] = book_author;
-		} else {
-			int i = 1;
-			while (this.author[i] != null)
-				this.author[i] = book_author;
-			i++;
+	public void setAuthor(String author) {
+		while (this.author[i] != null) {
+		this.author[i] = author;
+		i++;
 		}
 	}
 

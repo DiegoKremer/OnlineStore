@@ -61,7 +61,7 @@ public class FileReader {
 		String isbn = sc.next();
 		Book b = new Book (0, null, title, 0, isbn);
 		while(sc.hasNext()) {
-			b.setBook_author(sc.next());
+			b.setAuthor(sc.next());
 		}
 		sc.close();
 		return b;

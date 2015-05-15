@@ -42,11 +42,9 @@ public class Main {
 		System.out.println(itemStock.toString());
 
 		itemStock.searchItemDescription("lalalala");
-		
-
+	
 		
 		itemStock.removeSpecific(dvd1);
-		
 		
 		
 		
@@ -55,11 +53,6 @@ public class Main {
 		FileReader reader = new FileReader ();
 		
 		reader.readCSV(itemStock);
-		
-		
-		
-		
-		
 		
 		
 	}

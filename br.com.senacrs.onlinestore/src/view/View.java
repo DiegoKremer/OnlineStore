@@ -15,15 +15,36 @@ public class View {
 	/* The first menu to appears as the program is executed. 
 	 * Shows the main options of the store. */
 	
-	public void show () {
-		System.out.println("WELCOME TO THE ONLINE STORE");
-		System.out.println("What do you want to do? /n "
-				+ "1 - Search Items /n"
-				+ "2 - Show Cart /n "
-				+ "3 - Purchase /n"
+	public void showMainMenu () {
+		System.out.println("WELCOME TO THE ONLINE STORE\n");
+		System.out.println("What do you want to do? \n\n "
+				+ "1 - Search Items\n"
+				+ "2 - Show Cart\n "
+				+ "3 - Purchase\n"
 				+ "4 - Exit");
+		
+		switch (readInput()) {
+		case "1" : 
+			searchView();
+		case "2" :
+			showCart();
+		case "3":
+			showPurchase();
+		case "4":
+		}
 	}
 	
+	private void showPurchase() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void showCart() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
 	/* View that will show the user a message requesting to
 	 * insert a String type to search.  */
 	
@@ -33,6 +54,7 @@ public class View {
 		return readInput();
 		
 	}
+	
 	
 	/* Returns a basic String input from the scanner. */
 	

@@ -1,7 +1,10 @@
 package controller;
 
+import java.io.FileNotFoundException;
+
 import view.View;
 import structure.DoublyLinkedList;
+import structure.FileReader;
 
 public class Controller {
 	
@@ -10,6 +13,19 @@ public class Controller {
 	
 	public Controller () {
 		
+	}
+	
+	
+	/* Load items from an external file into the application list. */
+	
+	public void loadItems () {
+		FileReader reader = new FileReader ();
+		try {
+			reader.readCSV(itemStock);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

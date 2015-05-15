@@ -248,7 +248,34 @@ public class DoublyLinkedList {
 		}
 	}
 
+	/* Searches the list by name attribute using a string parameter */
 
+	public void searchItemName (String value) 
+	{
+		/* Checks first if the list is empty, if positive will inform. */
+		if (isEmpty()) 
+		{
+			System.out.println("The list is empty.");
+		} 
+		else 
+		{
+			/* Iterate through the list starting at first position until it is null. */
+			for (Node index = first; index!=null; index = index.next) 
+			{
+				/* Test if the description of the current Item contains the String 
+				 * value received from method parameter. */
+				if (index.data.getName().contains(value)) 
+					
+				{
+					/* If the Item description contains the string value informed then
+					 * it will print on the console the Item information. */
+					System.out.println(index.toString());
+				}
+
+			}
+		}
+
+	}
 
 	/* Searches the list by description attribute using a string parameter */
 
@@ -267,6 +294,7 @@ public class DoublyLinkedList {
 				/* Test if the description of the current Item contains the String 
 				 * value received from method parameter. */
 				if (index.data.getDescription().contains(value)) 
+					
 				{
 					/* If the Item description contains the string value informed then
 					 * it will print on the console the Item information. */

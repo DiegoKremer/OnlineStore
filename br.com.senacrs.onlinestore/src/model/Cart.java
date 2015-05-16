@@ -4,7 +4,6 @@ import java.util.Vector;
 public class Cart {
 
 	private Client client; // Variable to store the client owner of the cart.
-	private Vector itemCart = new Vector(); // Variable to store the Items in the cart.
 	private double price; // Variable to store the sum of the prices of the books.
 	
 

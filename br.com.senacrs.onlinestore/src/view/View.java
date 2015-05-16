@@ -1,6 +1,7 @@
 package view;
 
 import java.util.Scanner;
+import controller.Controller;
 
 public class View {
 	
@@ -17,9 +18,9 @@ public class View {
 	
 	public void showMainMenu () {
 		System.out.println("WELCOME TO THE ONLINE STORE\n");
-		System.out.println("What do you want to do? \n\n "
+		System.out.println("What do you want to do? \n\n"
 				+ "1 - Search Items\n"
-				+ "2 - Show Cart\n "
+				+ "2 - Show Cart\n"
 				+ "3 - Purchase\n"
 				+ "4 - Exit");
 		

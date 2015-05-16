@@ -8,7 +8,7 @@ import structure.FileReader;
 
 public class Controller {
 	
-	private View appView = new View ();
+	private View view = new View ();
 	private DoublyLinkedList itemStock = new DoublyLinkedList ();
 	
 	public Controller () {
@@ -16,7 +16,8 @@ public class Controller {
 	}
 	
 	
-	/* Load items from an external file into the application list. */
+	/* Load items from an external file into the application list
+	 * and catch if source file is not found. */
 	
 	public void loadItems () {
 		FileReader reader = new FileReader ();
@@ -31,11 +32,24 @@ public class Controller {
 	
 	/* Search Items from the list by their name. */
 	
-	public void searchItems () {
+	public void searchItems (String value) {
 		
-		itemStock.searchItemName(appView.searchView());
+		itemStock.searchItemName(view.searchView());
+		
 		
 	}
+	
+	public void listItems () {
+		
+		System.out.println(itemStock);
+		
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	

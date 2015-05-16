@@ -248,6 +248,7 @@ public class DoublyLinkedList {
 		}
 	}
 
+	
 	/* Searches the list by name attribute using a string parameter */
 
 	public void searchItemName (String value) 

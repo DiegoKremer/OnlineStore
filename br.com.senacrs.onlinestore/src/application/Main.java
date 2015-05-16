@@ -20,8 +20,12 @@ public class Main {
 		
 		
 		controller.loadItems();
+		controller.listItems();
+		
 		appView.showMainMenu();
 		
+	
+	
 		
 	}
 

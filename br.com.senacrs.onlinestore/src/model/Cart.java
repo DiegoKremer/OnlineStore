@@ -1,54 +1,69 @@
 package model;
 import java.util.Vector;
 
-public class Cart {
+class ItemCart {
+	
+	public Item item;
+	public int amount;
+	
+	public ItemCart (Item item, int amount) {
+		
+		this.item = item;
+		this.amount = amount;
+		
+	}
+}
 
-	private Client client; // Variable to store the client owner of the cart.
-	private double price; // Variable to store the sum of the prices of the books.
+public class Cart {
+	
+	private ItemCart[] items;
+	private Client client; 
+	private int itemCount;
 	
 
 
-	public Cart (Client c_client) {
-		this.client = c_client;
-
+	public Cart (Client client) {
+		this.client = client;
+		items = new ItemCart[5];
 	}
 
 
-	public Client getCart_client() {
+	public Client getClient() {
 		return client;
 	}
 
 
-	public void setCart_client(Client cart_client) {
-		this.client = cart_client;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	
-	public void addItems (Item item) {
-		itemCart.add(item);
+	public int getCount () {
+		return itemCount;
 	}
+	
+	
+	public double getTotal () {
+		double total = 0.0;
+		for (ItemCart e: items) {
+			if (e == null) break;
+			total += e.item.getPrice() * e.amount;
+		}
+		return total;
+	}
+	
+	
+	public void addItem (Item item, int amount) {	
+			
+	}
+	
+	
+	
+	
+	
+	
 
 	
-	public void removeItems (Item item) {
-		itemCart.remove(item);
-	}
 	
-	
-	public Item getCartItems () {
-		return null;
-		
-	}
-
-	
-
-	public void setCart_price(double cart_price) {
-		this.price = cart_price;
-	}
-	
-	
-	public String toString () {
-		return "Cliente: "+client.getClient_name()+"\n"+"Items:"+"\n"+itemCart.toString();
-	}
-
 }
 

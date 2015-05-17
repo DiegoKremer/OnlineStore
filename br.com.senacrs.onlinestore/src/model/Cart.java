@@ -54,8 +54,30 @@ public class Cart {
 	
 	
 	public void addItem (Item item, int amount) {	
-			
+		for (ItemCart e : items)
+		{
+			if (e == null) break;
+			if (e.item.compareTo(item) == 0) {
+				e.amount += amount;
+				return;
+			}
+		}
+		if (itemCount == items.length)
+			increaseCart();
+		items[itemCount] = new ItemCart(item, amount);
+		itemCount++;
 	}
+
+
+	private void increaseCart() {
+		ItemCart[] newItemCart = new ItemCart[items.length * 2];
+		System.arraycopy(items, 0, newItemCart, 0, items.length);
+		items = newItemCart;
+	
+	}
+	
+	
+	
 	
 	
 	

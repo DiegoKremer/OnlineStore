@@ -1,5 +1,5 @@
 package model;
-import java.util.Vector;
+
 
 /* Creates a class representing an Item of the cart. 
  * It consists of an Item and its amount. */
@@ -8,7 +8,7 @@ class ItemCart {
 	
 	public Item item;
 	public int amount;
-	
+
 	public ItemCart (Item item, int amount) {
 		
 		this.item = item;
@@ -112,13 +112,46 @@ public class Cart {
 	}
 	
 	
+	/* Will search the array for an item equal to the
+	 * one received on the parameter and if null will
+	 * break, else will compare the elements from
+	 * the array with the parameter and receive the
+	 * new amount for that item. */
+	
+	public void modifyItem(Item item, int amount) {
+		for (ItemCart i : items)
+		{
+			if (i == null) break;
+			if (i.item.compareTo(item) == 0) {
+				i.amount = amount;
+				return;
+			}
+		}
+	}
+	
+	
+	/* Checks if provided Index is not out of bounds and
+	 * if not returns the item on the provided index position
+	 * of the Item array. */
+	
+	public Item getItem(int index) {
+		if (index < 0 || index > itemCount)
+			throw new ArrayIndexOutOfBoundsException("Invalid Index.");
+		return items[index].item;
+	}
 	
 	
 	
+	/* Checks if provided Index is not out of bounds and if not 
+	 * returns the amount of the item provided index position
+	 * of the Item array. */
 	
 	
-	
-	
+	public int getItemAmount(int index) {
+		if (index < 0 || index > itemCount)
+			throw new ArrayIndexOutOfBoundsException("Invalid Index.");
+		return items[index].amount;
+	}
 	
 
 	

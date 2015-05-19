@@ -11,7 +11,6 @@ public class Book extends Item {
 	private String language; // Variable used to store the language on which the book is written.
 	private String genre; // Variable used to store the genre in which the book belongs.
 	private int pages; // Variable to store the number of pages the book contains.
-	private Cart[] cart; // Variable to check which carts books are in. 
 
 
 	// Constructor
@@ -42,17 +41,17 @@ public class Book extends Item {
 	// Below are the setters and getters.
 
 
-	public int getBook_isbn() {
+	public int getiISBN() {
 		return isbn;
 	}
 
 
-	public void setBook_isbn(int book_isbn) {
+	public void setISBN(int book_isbn) {
 		this.isbn = book_isbn;
 	}
 
 
-	public String[] getBook_author() {
+	public String[] getAuthor() {
 		return author;
 	}
 
@@ -65,55 +64,44 @@ public class Book extends Item {
 	}
 
 
-	public String getBook_publisher() {
+	public String getPublisher() {
 		return publisher;
 	}
 
 
-	public void setBook_publisher(String book_publisher) {
+	public void setPublisher(String book_publisher) {
 		this.publisher = book_publisher;
 	}
 
 
-	public String getBook_language() {
+	public String getLanguage() {
 		return language;
 	}
 
 
-	public void setBook_language(String book_language) {
+	public void setLanguage(String book_language) {
 		this.language = book_language;
 	}
 
 
-	public int getBook_pages() {
+	public int getPages() {
 		return pages;
 	}
 
 
-	public void setBook_pages(int book_pages) {
+	public void setPages(int book_pages) {
 		this.pages = book_pages;
 	}
 
 
-	public String getBook_genre() {
+	public String getGenre() {
 		return genre;
 	}
 
 
-	public void setBook_genre(String book_genre) {
+	public void setGenre(String book_genre) {
 		this.genre = book_genre;
 	}
-
-
-	public Cart[] getBook_cart() {
-		return cart;
-	}
-
-
-	public void setBook_cart(Cart[] book_cart) {
-		this.cart = book_cart;
-	};
-
 
 
 }

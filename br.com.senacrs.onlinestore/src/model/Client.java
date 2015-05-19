@@ -7,14 +7,13 @@ public class Client {
 	private String address;  // Variable used to store the client's address.
 	private String phone;  // Variable used to store the client's phone.
 	private String email;  // Variable used to store the client's email address.
-	private Cart[] cart; // Variable used to store the client's carts.
 	
 	// Constructor with the three obligatory parameters (code, name and email).
-	public Client (int c_code, String c_name, String c_email) {
+	public Client (int code, String name, String email) {
 		
-		this.code = c_code;
-		this.name = c_name;
-		this.email = c_email;
+		this.code = code;
+		this.name = name;
+		this.email = email;
 		
 	}
 	
@@ -31,57 +30,44 @@ public class Client {
 	
 	// Below are the setters and getters.
 
-	public int getClient_code() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setClient_code(int client_code) {
+	public void setCode(int client_code) {
 		this.code = client_code;
 	}
 
-	public String getClient_name() {
+	public String getName() {
 		return name;
 	}
 
-	public void setClient_name(String client_name) {
+	public void setName(String client_name) {
 		this.name = client_name;
 	}
 
-	public String getClient_address() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setClient_address(String client_address) {
+	public void setAddress(String client_address) {
 		this.address = client_address;
 	}
 
-	public String getClient_phone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setClient_phone(String client_phone) {
+	public void setPhone(String client_phone) {
 		this.phone = client_phone;
 	}
 
-	public String getClient_email() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setClient_email(String client_email) {
+	public void setEmail(String client_email) {
 		this.email = client_email;
 	}
-
-	public Cart[] getClient_cart() {
-		return cart;
-	}
-
-	public void setClient_cart(Cart[] client_cart) {
-		this.cart = client_cart;
-	}
-	
-	
-	
-	
-	
 
 }

@@ -22,24 +22,15 @@ public class View {
 				+ "2 - Show Cart\n"
 				+ "3 - Purchase\n"
 				+ "4 - Exit");
-		
-		switch (readInput()) {
-		case "1" : 
-			searchView();
-		case "2" :
-			showCart();
-		case "3":
-			showPurchase();
-		case "4":
-		}
+	
 	}
 	
-	private void showPurchase() {
+	public void showPurchase() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	private void showCart() {
+	public void showCart() {
 		// TODO Auto-generated method stub
 		
 	}
@@ -52,7 +43,6 @@ public class View {
 		
 		System.out.println("Please enter the Item you wish to search: ");
 		return readInput();
-		
 	}
 	
 	

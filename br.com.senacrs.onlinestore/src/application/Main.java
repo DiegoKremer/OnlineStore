@@ -19,12 +19,13 @@ public class Main {
 		Controller controller = new Controller ();
 		
 		
+		/* Software execution stream */
+		
 		controller.loadItems();
-		controller.listItems();
-		
 		appView.showMainMenu();
+		controller.menuSelection();
 		
-	
+			
 	
 		
 	}

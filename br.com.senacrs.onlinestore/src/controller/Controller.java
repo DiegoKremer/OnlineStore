@@ -33,16 +33,12 @@ public class Controller {
 	/* Search Items from the list by their name. */
 
 	public void searchItems (String value) {
-
 		itemStock.searchItemName(value);
-
-
 	}
+	
 
 	public void listItems () {
-
 		System.out.println(itemStock);
-
 	}
 
 
@@ -50,11 +46,27 @@ public class Controller {
 		switch (view.readInput()) {
 		case "1" : 
 			searchItems(view.searchView());
+			returnSearchSelection(view.returnSearchView());
 		case "2" :
 			view.showCart();
 		case "3":
 			view.showPurchase();
 		case "4":
+			System.exit(0);
+		}
+	}
+	
+	
+	public void returnSearchSelection (String value) {
+		if (value.equals("1")) {
+			searchItems(view.searchView());
+			view.returnSearchView();
+		} else if (value.equals("2")) {
+			view.showMainMenu();
+			menuSelection();
+		} else {
+			view.invalidInput();
+			returnSearchSelection(view.returnSearchView());
 		}
 	}
 

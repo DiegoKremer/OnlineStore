@@ -3,9 +3,6 @@ package application;
 import java.io.FileNotFoundException;
 
 import controller.Controller;
-import structure.DoublyLinkedList;
-import structure.FileReader;
-import model.*;
 import view.View;
 
 public class Main {

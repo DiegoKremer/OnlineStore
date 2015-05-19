@@ -40,7 +40,6 @@ public class View {
 	 * insert a String type to search.  */
 	
 	public String searchView () {
-		
 		System.out.println("Please enter the Item you wish to search: ");
 		return readInput();
 	}
@@ -50,6 +49,15 @@ public class View {
 	
 	public String readInput () {
 		return keyboard.next();
+	}
+	
+	public String returnSearchView () {
+		System.out.println("\n What do you want to do? \n 1 - Search Again\n 2 - Return to Menu");
+		return readInput();
+	}
+	
+	public void invalidInput () {
+		System.out.println("Invalid input. Please chose a valid option.");
 	}
 	
 	

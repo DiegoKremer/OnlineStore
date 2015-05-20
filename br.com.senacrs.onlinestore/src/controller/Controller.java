@@ -1,7 +1,6 @@
 package controller;
 
 import java.io.FileNotFoundException;
-
 import structure.DoublyLinkedList;
 import structure.FileReader;
 import view.View;
@@ -10,6 +9,7 @@ public class Controller {
 
 	private DoublyLinkedList itemStock = new DoublyLinkedList ();
 	private View view = new View ();
+	
 
 	public Controller () {
 
@@ -69,10 +69,7 @@ public class Controller {
 			returnSearchSelection(view.returnSearchView());
 		}
 	}
-
-
-
-
+	
 
 
 

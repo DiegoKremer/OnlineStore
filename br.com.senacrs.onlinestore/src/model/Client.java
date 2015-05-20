@@ -8,7 +8,14 @@ public class Client {
 	private String phone;  // Variable used to store the client's phone.
 	private String email;  // Variable used to store the client's email address.
 	
-	// Constructor with the three obligatory parameters (code, name and email).
+	
+	/* Constructors */
+	
+	public Client () {
+		
+	}
+	
+	
 	public Client (int code, String name, String email) {
 		
 		this.code = code;
@@ -17,7 +24,7 @@ public class Client {
 		
 	}
 	
-	// Constructor with all the variables. 
+	
 	public Client (int c_code, String c_name, String c_email, String c_address, String c_phone) {
 		
 		this.code = c_code;
@@ -27,6 +34,7 @@ public class Client {
 		this.phone = c_phone;
 		
 	}
+	
 	
 	// Below are the setters and getters.
 

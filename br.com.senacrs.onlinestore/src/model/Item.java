@@ -7,7 +7,7 @@ public class Item implements Comparable<Item> {
 	private String name;
 	private double price;
 	
-
+	
 	public Item(int code, String description, String name, double price) {
 		this.code = code;
 		this.description = description;

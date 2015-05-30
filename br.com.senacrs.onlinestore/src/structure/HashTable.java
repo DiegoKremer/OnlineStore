@@ -44,9 +44,19 @@ public class HashTable {
 		table[hash] = new HashCell (value.getiISBN(), value);
 	}
 	
-	public void get () {
+	public Book get (int key) {
+		int hash = (key % currentCapacity);
+		while (table[hash] != null && table[hash].getKey() != key) {
+			 hash = (hash + 1) % currentCapacity;
+			/* if (table[hash] == null) {
+                 return;
+		} else { */
+			 
+		}
+		return table[hash].getValue();
+		}
 		
-	}
+	
 	
 	public int hashFunction (Book value) {
 		int hash = 0;

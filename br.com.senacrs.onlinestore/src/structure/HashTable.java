@@ -2,14 +2,35 @@ package structure;
 
 import model.Book;
 
+
+
 public class HashTable {
 	
+	public class HashCell {
+		
+		private int key;
+		private Book value;
+		
+		public HashCell (int key, Book value) {
+			this.key = key;
+			this.value = value;
+		}
+		
+		public int getKey () {
+			return key;
+		}
+		
+		public Book getValue () {
+			return value;
+		}
+		
+	}
+	
 	private int initialCapacity;
-	private Book[] book;
 	
 	public HashTable (int initialCapacity) {
 		this.initialCapacity = initialCapacity;
-		book = new Book[initialCapacity];
+		
 	}
 	
 	public void insert () {

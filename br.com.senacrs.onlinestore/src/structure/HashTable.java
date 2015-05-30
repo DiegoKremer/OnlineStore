@@ -27,20 +27,31 @@ public class HashTable {
 	}
 	
 	private int initialCapacity;
+	private int currentCapacity;
+	private HashCell[]  table;
 	
 	public HashTable (int initialCapacity) {
 		this.initialCapacity = initialCapacity;
+		table = new HashCell[initialCapacity];
+		currentCapacity = initialCapacity;
+	}
+	
+	public void insert (Book value) {
+		int hash = hashFunction(value);
+		while (table[hash] != null && table[hash].getKey() != value.getiISBN()) {
+			hash = (hashFunction(value) + 1) % currentCapacity;
+		}
+		table[hash] = new HashCell (value.getiISBN(), value);
+	}
+	
+	public void get () {
 		
 	}
 	
-	public void insert () {
-		
-	}
-	
-	public int hashFunction (int k, Book value) {
-		int hashValue = 0;
-			hashValue = value.getiISBN() % 5000;
-		return hashValue;
+	public int hashFunction (Book value) {
+		int hash = 0;
+			hash = value.getiISBN() % currentCapacity;
+		return hash;
 	}
 	
 	public void size () {

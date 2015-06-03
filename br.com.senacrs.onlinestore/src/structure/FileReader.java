@@ -6,6 +6,57 @@ import java.util.Scanner;
 import model.Book;
 
 public class FileReader {
+	
+	/* Read CSV method using a Hash Table to store books */
+	
+	public void readCSV (HashTable hashtable) throws FileNotFoundException {
+		
+		/* Creates scanner that will read the CSV file. */
+		Scanner reader = new Scanner (new File("src/files/dados.txt"));
+
+		/* 
+		 * Set the delimiter which will be used to separate 
+		 * the information from the file. 
+		 */
+
+		reader.useDelimiter(";");
+
+
+
+		/* 
+		 * The reader will go through the file until it have read
+		 * all the file. 
+		 */
+		while (reader.hasNext()) {
+
+			/* Split the first field as the type of the current line being
+			 * read and the rest will be set as the data. */
+
+			String type = reader.next();
+			String data = reader.nextLine();
+
+
+
+			/* Check the item type and add the line content to a list 
+			 * according to the type read. */
+
+
+			if (type.equals("livro")) {
+				hashtable.insert(createBook(data));
+			} 
+			else {
+				//list.addFirst(createDVD(data));
+			}
+
+
+		}
+
+		reader.close();
+		
+	}
+	
+	
+	/* Read CSV method using a Doubly Linked List to store books */
 
 	public void readCSV (DoublyLinkedList list) throws FileNotFoundException 
 	{

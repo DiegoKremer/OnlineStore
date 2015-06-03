@@ -3,6 +3,7 @@ package application;
 import java.io.FileNotFoundException;
 
 import controller.Controller;
+import structure.HashTable;
 import view.View;
 
 public class Main {
@@ -23,7 +24,8 @@ public class Main {
 		controller.menuSelection();
 		
 			
-	
+		HashTable hash = new HashTable (6000);
+		
 		
 	}
 

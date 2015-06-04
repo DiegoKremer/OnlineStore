@@ -44,9 +44,6 @@ public class FileReader {
 			if (type.equals("livro")) {
 				hashtable.insert(createBook(data));
 			} 
-			else {
-				//list.addFirst(createDVD(data));
-			}
 
 
 		}

@@ -2,6 +2,7 @@ package application;
 
 import java.io.FileNotFoundException;
 
+import controller.BookController;
 import controller.Controller;
 import structure.HashTable;
 import view.View;
@@ -15,16 +16,21 @@ public class Main {
 		
 		View appView = new View ();
 		Controller controller = new Controller ();
+		BookController bookcontroller = new BookController ();
 		
 		
 		/* Software execution stream */
 		
+		bookcontroller.loadBooks();
+		bookcontroller.listBooks();
+		
+		
+		/* 
 		controller.loadItems();
 		appView.showMainMenu();
 		controller.menuSelection();
-		
+		*/
 			
-		HashTable hash = new HashTable (6000);
 		
 		
 	}

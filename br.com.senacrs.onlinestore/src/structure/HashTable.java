@@ -91,15 +91,17 @@ public class HashTable {
 		 * Loop through the list appending the content while current position is
 		 * not empty.
 		 */
+		
+		StringBuilder s = new StringBuilder ();
 
 		for (int i = 0; table.length > i;) {
 			if (table[i] != null)
-				return table[i].toString();
+				s.append(table[i].toString());
 			else
 				i++;
 		}
 
-		return null;
+		return s.toString();
 
 		/* Return the content of all list positions converted to String type */
 

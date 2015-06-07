@@ -48,7 +48,7 @@ public class HashTable {
 
 	public void insert(Book value) {
 		/* Calculates the hash function of the received parameter */
-		int hash = hashFunction(value);
+		int hash = hashFunctionOne(value);
 
 		/*
 		 * Check if table index is not null or is already occupied with a
@@ -56,7 +56,7 @@ public class HashTable {
 		 * result as a way to prevent collision by linear probing
 		 */
 		while (table[hash] != null && table[hash].getKey() != value.getiISBN()) {
-			hash = (hashFunction(value) + 1) % currentCapacity;
+			hash = (hashFunctionOne(value) + 1) % currentCapacity;
 		}
 
 		/* Insert the cell with key and value into current index of the table */
@@ -71,9 +71,15 @@ public class HashTable {
 		return table[hash].getValue();
 	}
 
-	public int hashFunction(Book value) {
+	public int hashFunctionOne(Book value) {
 		int hash = 0;
 		hash = value.getiISBN() % currentCapacity;
+		return hash;
+	}
+	
+	public int hashFunctionTwo (Book value) {
+		int hash = 0;
+		hash = value.getiISBN() % (currentCapacity / 2);
 		return hash;
 	}
 

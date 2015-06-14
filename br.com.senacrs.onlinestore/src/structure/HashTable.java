@@ -32,22 +32,22 @@ public class HashTable {
 
 	}
 
-	private int initialCapacity;
-	private int currentCapacity;
+	private int capacity;
+	private int usedCapacity;
 	private HashCell[] table;
 
 	/* Main constructor for the Hash Table */
 
 	public HashTable(int initialCapacity) {
-		this.initialCapacity = initialCapacity;
+		this.capacity = initialCapacity;
 		table = new HashCell[initialCapacity];
-		currentCapacity = initialCapacity;
+		capacity = initialCapacity;
 	}
 
 
 	/* Insertion method using Cuckoo collision handling */
 
-	public void insertCuckoo(Book value) {
+	public void insert (Book value) {
 		
 		/* Run the first and second functions on the ISBN code
 		 * from the book parameter and store on their respective
@@ -62,24 +62,30 @@ public class HashTable {
 		
 		if (table[firstHash] == null) {
 			table[firstHash] = new HashCell(value.getISBN(), value);
+			usedCapacity++;
+			checkLoadFactor();
 			
 		/* If position not null will try the second function. */
 		} else if (table[secondHash] == null) {
 			table[secondHash] = new HashCell(value.getISBN(), value);
+			usedCapacity++;
+			checkLoadFactor();
 			
 		/* If position from second function also not null will move the element from
 		 * the position and arrange a new position for the old one. */
 		} else {
 			tempOldValue = table[secondHash].getValue();
 			table[secondHash] = new HashCell(value.getISBN(), value);
-			insertCuckoo(tempOldValue);
+			insert(tempOldValue);
+			usedCapacity++;
+			checkLoadFactor();
 		}
 
 	}
 	
 	/* Get the Book based on the provided key */
 	
-	public Book getCuckoo (int key) {
+	public Book get (int key) {
 		
 		/* Run the first and second functions on the key 
 		 * received as parameter and store in their respective
@@ -107,7 +113,7 @@ public class HashTable {
 
 	public int hashFunctionOne(int value) {
 		int hash = 0;
-		hash = value % currentCapacity;
+		hash = value % capacity;
 		return hash;
 	}
 	
@@ -116,11 +122,20 @@ public class HashTable {
 
 	public int hashFunctionTwo(int value) {
 		int hash = 0;
-		hash = value % (currentCapacity / 2);
+		hash = value % (capacity / 2);
 		return hash;
 	}
 
 	
+	/* Method will check current usage percentage of the Hash Table and if 
+	 * it exceeds 80% will then double its size */
+	
+	public void checkLoadFactor () {
+		int usage = (usedCapacity / capacity) * 100;
+		if (usage > 80) {
+			capacity = capacity * 2;
+		}
+	}
 
 	public String toString() {
 

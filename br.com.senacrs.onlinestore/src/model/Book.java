@@ -104,5 +104,9 @@ public class Book extends Item {
 		this.genre = book_genre;
 	}
 
+	public String toString () {
+		return "Codigo: "+getCode()+" - "+"Item: "+getName() +" - "+"Descricao: "+getDescription()+" - "+"Preco: "+getPrice()+" - "+"ISBN: "+getISBN();
+		
+	}
 
 }

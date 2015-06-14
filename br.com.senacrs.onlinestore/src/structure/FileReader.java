@@ -112,7 +112,7 @@ public class FileReader {
 				isbn = Long.parseLong(isbnText);
 		      
 		} catch (NumberFormatException e) {
-		     System.out.println("Conversion failed for String: " + isbnText);
+		     //System.out.println("Conversion failed for String: " + isbnText);
 		     isbn = 0;
 		}
 		Book b = new Book (0, null, title, 0, isbn);

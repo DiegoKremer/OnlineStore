@@ -1,7 +1,5 @@
 package structure;
 
-import java.util.Arrays;
-
 import model.Book;
 
 public class HashTable {
@@ -64,7 +62,8 @@ public class HashTable {
 			usedCapacity++;
 
 			/* If position not null will try the second function. */
-		} else if (table[secondHash] == null || table[secondHash].getValue() != value) {
+		} else if (table[secondHash] == null
+				|| table[secondHash].getValue() != value) {
 			table[secondHash] = new HashCell(value.getISBN(), value);
 			usedCapacity++;
 
@@ -73,7 +72,8 @@ public class HashTable {
 			 * element from the position and arrange a new position for the old
 			 * one.
 			 */
-		} else if (table[thirdHash] == null || table[thirdHash].getValue() != value) {
+		} else if (table[thirdHash] == null
+				|| table[thirdHash].getValue() != value) {
 			table[thirdHash] = new HashCell(value.getISBN(), value);
 
 		} else {
@@ -174,12 +174,12 @@ public class HashTable {
 
 	/*
 	 * Method will check current usage percentage of the Hash Table and if it
-	 * exceeds 80% will then double its size
+	 * exceeds 85% will then double its size
 	 */
 
 	private void checkLoadFactor() {
 		int usage = (usedCapacity / capacity()) * 100;
-		if (usage > 70) {
+		if (usage > 85) {
 			doubleCapacity(table);
 		}
 	}
@@ -212,22 +212,22 @@ public class HashTable {
 	}
 
 	public String toString() {
-		
-		return Arrays.toString(table);
 
 		/*
 		 * Loop through the list appending the content while current position is
 		 * not empty.
 		 */
-		/*
-		 * String s = "Posição vazia";
-		 * 
-		 * for (int i = 3; i < table.length; i++) { if (table[i] == null) {
-		 * System.out.println("Posição vazia"); } else s = s +
-		 * table[i].getValue().toString() + "\n"; }
-		 * 
-		 * return s;
-		 */
+
+		String s = "Table Content: \n";
+
+		for (int i = 3; i < table.length; i++) {
+			if (table[i] == null) {
+				s = s + "Empty Slot" + "\n";
+			} else
+				s = s + table[i].getValue().toString() + "\n";
+		}
+
+		return s;
 
 		/* Return the content of all list positions converted to String type */
 

@@ -34,7 +34,7 @@ public class FileReader {
 
 			String type = reader.next();
 			String data = reader.nextLine();
-
+			
 
 
 			/* Check the item type and add the line content to a list 
@@ -107,14 +107,15 @@ public class FileReader {
 		sc.useDelimiter(";");
 		String title = sc.next();
 		String isbnText = sc.next();
-		long isbn = 0;
+		long isbn;
 		try {
-		      isbn = Long.parseLong(isbnText);
+				isbn = Long.parseLong(isbnText);
+		      
 		} catch (NumberFormatException e) {
-		     System.out.println("Conversion for String " + isbnText + " failed");
+		     System.out.println("Conversion failed for String: " + isbnText);
+		     isbn = 0;
 		}
-		
-		Book b = new Book (0, null, title, 0, (int)isbn);
+		Book b = new Book (0, null, title, 0, isbn);
 		while(sc.hasNext()) {
 			b.setAuthor(sc.next());
 		}

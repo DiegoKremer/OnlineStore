@@ -54,7 +54,9 @@ public class HashTable {
 		 */
 
 		int firstHash = hashFunctionOne(value.getISBN());
+		
 		int secondHash = hashFunctionTwo(value.getISBN());
+		
 
 		Book tempOldValue;
 
@@ -135,7 +137,8 @@ public class HashTable {
 	
 	private int convertValueToInt (long value) {
 		String longNumberString = Long.toString(value);
-		long newValue = Long.parseLong(longNumberString.substring(0, 4));
+		long newValue = Long.parseLong(longNumberString.substring(5, 12));
+		System.out.println(newValue);
 		return (int) newValue; 
 	}
 

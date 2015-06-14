@@ -107,14 +107,14 @@ public class FileReader {
 		sc.useDelimiter(";");
 		String title = sc.next();
 		String isbnText = sc.next();
-		int isbn = 0;
+		long isbn = 0;
 		try {
-		      isbn = Integer.parseInt(isbnText);
+		      isbn = Long.parseLong(isbnText);
 		} catch (NumberFormatException e) {
 		     System.out.println("Conversion for String " + isbnText + " failed");
 		}
 		
-		Book b = new Book (0, null, title, 0, isbn);
+		Book b = new Book (0, null, title, 0, (int)isbn);
 		while(sc.hasNext()) {
 			b.setAuthor(sc.next());
 		}

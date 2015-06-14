@@ -1,5 +1,7 @@
 package structure;
 
+import java.util.Arrays;
+
 import model.Book;
 
 public class HashTable {
@@ -8,15 +10,15 @@ public class HashTable {
 
 	public class HashCell {
 
-		private int key;
+		private long key;
 		private Book value;
 
-		public HashCell(int key, Book value) {
+		public HashCell(long key, Book value) {
 			this.key = key;
 			this.value = value;
 		}
 
-		public int getKey() {
+		public long getKey() {
 			return key;
 		}
 
@@ -86,7 +88,7 @@ public class HashTable {
 
 	/* Get the Book based on the provided key */
 
-	public Book get(int key) {
+	public Book get(long key) {
 
 		/*
 		 * Run the first and second functions on the key received as parameter
@@ -121,17 +123,31 @@ public class HashTable {
 
 	/* Returns the result of the first function to be used on the Hash Table */
 
-	private int hashFunctionOne(int value) {
+	private int hashFunctionOne(long value) {
 		int hash;
-		hash = value % capacity();
+		int integerValue = 0;
+		if (value > Integer.MAX_VALUE) {
+			integerValue = convertValueToInt(value);
+		} 
+		hash = integerValue % capacity();
 		return hash;
+	}
+	
+	private int convertValueToInt (long value) {
+		String longNumberString = Long.toString(value);
+		long newValue = Long.parseLong(longNumberString.substring(0, 4));
+		return (int) newValue; 
 	}
 
 	/* Returns the result of the second function to be used on the Hash Table */
 
-	private int hashFunctionTwo(int value) {
+	private int hashFunctionTwo(long value) {
 		int hash;
-		hash = value % (capacity() / 2);
+		int integerValue = 0;
+		if (value > Integer.MAX_VALUE) {
+			integerValue = convertValueToInt(value);
+		} 
+		hash = integerValue % (capacity() / 2);
 		return hash;
 	}
 
@@ -154,21 +170,28 @@ public class HashTable {
 	}
 
 	public String toString() {
+		
+		return Arrays.toString(table);
 
 		/*
 		 * Loop through the list appending the content while current position is
 		 * not empty.
 		 */
-		String s = "";
-		for (int i = 0; i < table.length; i++) {
-			if (table[i] != null) 
+		/*
+		String s = "Posição vazia";
+		
+		for (int i = 3; i < table.length; i++) {
+			if (table[i] == null) {
+				System.out.println("Posição vazia");
+			} else  
 			s = s + table[i].getValue().toString() + "\n";
-		}
+		} 
 		
 		return s;
+		*/
 
 			/* Return the content of all list positions converted to String type */
-
+		
 		
 		
 		

@@ -41,7 +41,7 @@ public class Book extends Item {
 	// Below are the setters and getters.
 
 
-	public int getiISBN() {
+	public int getISBN() {
 		return isbn;
 	}
 

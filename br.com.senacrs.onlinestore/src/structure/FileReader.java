@@ -106,15 +106,8 @@ public class FileReader {
 		Scanner sc = new Scanner (data);
 		sc.useDelimiter(";");
 		String title = sc.next();
-		String isbnText = sc.next();
-		long isbn;
-		try {
-				isbn = Long.parseLong(isbnText);
-		      
-		} catch (NumberFormatException e) {
-		     //System.out.println("Conversion failed for String: " + isbnText);
-		     isbn = 0;
-		}
+		String isbn = sc.next();
+		
 		Book b = new Book (0, null, title, 0, isbn);
 		while(sc.hasNext()) {
 			b.setAuthor(sc.next());

@@ -5,7 +5,7 @@ public class Book extends Item {
 	private int n = 50;
 	private int i = 0;
 	
-	private long isbn;	 // Variable used to store the ISBN of the book, which also functions as the book unique code.
+	private String isbn;	 // Variable used to store the ISBN of the book, which also functions as the book unique code.
 	private String[] author = new String[n]; // Variable used to store the author of the book.
 	private String publisher; // Variable used to store the publisher of the book.
 	private String language; // Variable used to store the language on which the book is written.
@@ -21,12 +21,12 @@ public class Book extends Item {
 
 	}
 	
-	public Book (int code, String description, String name, double price, long isbn) {
+	public Book (int code, String description, String name, double price, String isbn) {
 		super(code, description, name, price);
 		this.isbn = isbn;
 	}
 
-	public Book (int code, String description, String name, double price, long isbn, String[] author, String publisher, String language, String genre, int pages) 
+	public Book (int code, String description, String name, double price, String isbn, String[] author, String publisher, String language, String genre, int pages) 
 	{
 		super(code, description, name, price);
 		this.isbn = isbn;
@@ -42,12 +42,12 @@ public class Book extends Item {
 	// Below are the setters and getters.
 
 
-	public long getISBN() {
+	public String getISBN() {
 		return isbn;
 	}
 
 
-	public void setISBN(long isbn) {
+	public void setISBN(String isbn) {
 		this.isbn = isbn;
 	}
 

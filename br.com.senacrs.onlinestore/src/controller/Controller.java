@@ -1,12 +1,15 @@
 package controller;
 
 import java.io.FileNotFoundException;
+
 import structure.DoublyLinkedList;
 import structure.FileReader;
+import structure.HashTable;
 import view.View;
 
 public class Controller {
 
+	private HashTable bookStock = new HashTable (50);
 	private DoublyLinkedList itemStock = new DoublyLinkedList ();
 	private View view = new View ();
 	
@@ -68,6 +71,21 @@ public class Controller {
 			view.invalidInput();
 			returnSearchSelection(view.returnSearchView());
 		}
+	}
+	
+	public void loadBooks () {
+		FileReader reader = new FileReader ();
+		try {
+			reader.readCSV(bookStock);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void listBooks () {
+		
+		System.out.println(bookStock);
 	}
 	
 

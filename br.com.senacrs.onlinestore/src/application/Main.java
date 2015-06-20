@@ -4,8 +4,6 @@ import java.io.FileNotFoundException;
 
 
 import controller.Controller;
-import structure.HashTable;
-import view.View;
 
 public class Main {
 	
@@ -14,7 +12,7 @@ public class Main {
 
 		/* Creation of the objects needed for testing */
 		
-		View appView = new View ();
+		
 		Controller controller = new Controller ();
 		
 		
@@ -23,8 +21,8 @@ public class Main {
 		
 		controller.loadBooks();
 		controller.listBooks();
-		
-		
+		System.out.println(controller.retrieveBook("9780800626792"));
+	
 		/* 
 		controller.loadItems();
 		appView.showMainMenu();

@@ -2,6 +2,7 @@ package controller;
 
 import java.io.FileNotFoundException;
 
+
 import structure.DoublyLinkedList;
 import structure.FileReader;
 import structure.HashTable;
@@ -9,7 +10,7 @@ import view.View;
 
 public class Controller {
 
-	private HashTable bookStock = new HashTable (50);
+	private HashTable bookStock = new HashTable (500);
 	private DoublyLinkedList itemStock = new DoublyLinkedList ();
 	private View view = new View ();
 	
@@ -86,7 +87,15 @@ public class Controller {
 	public void listBooks () {
 		
 		System.out.println(bookStock);
+		System.out.println("Used Capacity" + bookStock.getUsedCapacity());
+		System.out.println("Used Capacity 2" + bookStock.getUsedCapacity2());
+		System.out.println("Current Capacity" + bookStock.getCurrentCapacity());
 	}
+	
+	public String retrieveBook (String isbn) {
+		return bookStock.get(isbn).toString() + " retrieved with success.";
+	}
+	
 	
 
 

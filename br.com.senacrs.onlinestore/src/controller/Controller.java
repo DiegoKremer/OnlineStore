@@ -86,10 +86,9 @@ public class Controller {
 	
 	public void listBooks () {
 		
-		System.out.println(bookStock);
-		System.out.println("Used Capacity" + bookStock.getUsedCapacity());
-		System.out.println("Used Capacity 2" + bookStock.getUsedCapacity2());
-		System.out.println("Current Capacity" + bookStock.getCurrentCapacity());
+		//System.out.println(bookStock);
+		System.out.println("Used Capacity: " + bookStock.getUsedCapacity());
+		System.out.println("Current Capacity: " + bookStock.getCurrentCapacity());
 	}
 	
 	public String retrieveBook (String isbn) {

@@ -84,9 +84,10 @@ public class HashTable {
 			Book tempOldValue;
 			tempOldValue = table[secondHash].getValue();
 			table[secondHash] = new HashCell(secondHash, value);
+			insert(tempOldValue);
 			cycleControl++;
 			if (cycleControl < 5) {
-				insert(tempOldValue);
+				
 				usedCapacity++;
 			} else {
 				checkLoadFactor();
@@ -134,21 +135,26 @@ public class HashTable {
 
 	/* Returns the result of the first function to be used on the Hash Table */
 
-	private int hashFunctionOne(String value) {
-		int hash;
-		int integerValue = 0;
-
-		hash = integerValue % capacity();
-		return hash;
+	private int hashFunctionOne(String isbn) {
+		char ch[];
+		ch = isbn.toCharArray();
+		int i, sum;
+		for (sum = 0, i = 0; i < isbn.length(); i++) {
+			sum += ch[i];
+		}
+		return sum % capacity();
 	}
 
 	/* Returns the result of the second function to be used on the Hash Table */
 
-	private int hashFunctionTwo(String value) {
-		int hash;
-		int integerValue = 0;
-		hash = (integerValue % capacity()) / 2;
-		return hash;
+	private int hashFunctionTwo(String isbn) {
+		char ch[];
+		ch = isbn.toCharArray();
+		int i, sum;
+		for (sum = 0, i = 0; i < isbn.length(); i++) {
+			sum += ch[i];
+		}
+		return sum % (capacity() / 3);
 	}
 
 

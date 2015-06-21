@@ -7,7 +7,7 @@ import structure.HashTable;
 
 public class BookController {
 	
-	private HashTable bookStock = new HashTable (50);
+	private HashTable bookStock = new HashTable ();
 	
 	
 	public void loadBooks () {

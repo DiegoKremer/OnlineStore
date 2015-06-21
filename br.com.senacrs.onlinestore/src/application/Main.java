@@ -21,7 +21,7 @@ public class Main {
 		
 		controller.loadBooks();
 		controller.listBooks();
-		System.out.println(controller.retrieveBook(""));
+		System.out.println(controller.retrieveBook("9781101910481"));
 	
 		/* 
 		controller.loadItems();

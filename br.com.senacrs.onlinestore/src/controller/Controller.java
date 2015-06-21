@@ -10,7 +10,7 @@ import view.View;
 
 public class Controller {
 
-	private HashTable bookStock = new HashTable (500);
+	private HashTable bookStock = new HashTable ();
 	private DoublyLinkedList itemStock = new DoublyLinkedList ();
 	private View view = new View ();
 	

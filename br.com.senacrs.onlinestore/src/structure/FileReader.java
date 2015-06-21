@@ -42,6 +42,7 @@ public class FileReader {
 
 
 			if (type.equals("livro")) {
+				
 				hashtable.insert(createBook(data));
 			} 
 
@@ -106,7 +107,12 @@ public class FileReader {
 		Scanner sc = new Scanner (data);
 		sc.useDelimiter(";");
 		String title = sc.next();
-		String isbn = sc.next();
+		String tempISBN = sc.next();
+		
+		String isbn = "";
+		if (tempISBN.startsWith("97")) {
+			isbn = tempISBN;
+		} 
 		
 		Book b = new Book (0, null, title, 0, isbn);
 		while(sc.hasNext()) {
